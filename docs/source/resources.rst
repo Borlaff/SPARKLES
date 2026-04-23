@@ -7,9 +7,13 @@ A: Absolutely not. The objective of this repository is not to predict the qualit
 
 By doing that, we can give educated guesses of the level of contamination for present and future missions, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management. 
 
+**Q: My favorite telescope will combine many images to produce mosaics. Will this help reduce the impact of satellite trails?**
+
+A: Possibly yes. Satellites appear almost as randomized events, very rarely falling in the same position of the sky. By combining many images most of those trails can be removed. This is the case of the core missions for SPHEREx (IR cosmological mapping) and ARRAKIHS (low surface brightness astronomy). However, these science cases only represent a subset of all possible scenarios, and other science cases that rely on individual exposures or reduced datasets can be likely affected. 
+
 **Q: But these satellite do not exist now, why should I care?**
 
-A: As recently published in *Nature*, `astronomy is under threat from above and below <https://www.nature.com/articles/s41550-026-02830-9>`_. We have launched to space in six years (2020-2026) more satellites than in the previous 60 years (1960-2020). Without any regulations, the number of satellites in orbit is expected to increase by a factor of 100 in the next decade, and the levels of light pollution will increase accordingly. 
+A: Humanity has launched to space in six years (2020-2026) more satellites than in the previous 60 years (1960-2020). Without any regulations, the number of satellites in orbit is expected to increase by a factor of 100 in the next decade, and the levels of light pollution will increase accordingly. 
 
 Contrary to the popular belief, light pollution is not a problem unique of ground-based astronomy. While forcing scientists to use space telescopes only (like Hubble) instead of ground ones (Vera C. Rubin) seems as a tempting solution, there are two problems: 1) space telescopes cannot possibly replace the thousands of different observatories on the ground  and  - as we demonstrate in this project -  2) satellites can contaminate space telescopes as well.
 
@@ -22,9 +26,9 @@ A: No, but we need to act now. The good news is that the problem of satellite li
 
 **Q: How can I help?**
 
-Visit the website of the `Center for the Protection of the Dark and Quiet Sky (CPS) <https://cps.iau.org/>`_ and become a protector of the Dark Sky! `(link here) <https://docs.google.com/forms/d/e/1FAIpQLSdFL6JviMl4-W3xIlWrZACFOWV-6B8SVptPpxTYtLZOXgUHmg/viewform>`_ 
+Visit the website of the `Center for the Protection of the Dark and Quiet Sky (CPS) <https://cps.iau.org/>`_ and become a protector of the Dark Sky! `(link here) <https://docs.google.com/forms/d/e/1FAIpQLSdFL6JviMl4-W3xIlWrZACFOWV-6B8SVptPpxTYtLZOXgUHmg/viewform>`_.
 
-
+If you would like to get involved in our team, feel free to `email us <mailto:a.s.borlaff@nasa.gov>`_.
 
 **Q: How often are forecasts updated?**
 

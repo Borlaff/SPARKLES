@@ -1,8 +1,5 @@
-Additional Resources
-====================
-
 Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================
 
 **Q: Your model predicts a lot of satellite trails my telescope! Does this mean that the quality of the images will be bad?**
 

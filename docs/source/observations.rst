@@ -1,6 +1,9 @@
 Observations
 =====================================
 
+Using SPHEREx as a light pollution thermometer - Borlaff et al. (2026, in revision)
+------------------------------------------------------------------------------------
+
 In a second paper, currently under revision by The Astronomical Journal, we present the first observational confirmation of the SPARKLES predictions using data from the SPHEREx space telescope. We find that the observed satellite trail frequencies in SPHEREx data are consistent with our forecasts, confirming that satellite megaconstellations are already impacting space-based astronomy and will continue to do so in the future.
 
 .. figure:: ../../images/PAPER_2/2025W18_1B_0393_annotated_lite.jpeg

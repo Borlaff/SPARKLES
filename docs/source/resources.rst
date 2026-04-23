@@ -1,12 +1,14 @@
 Additional Resources
 ====================
 
-Forecast Updates & Data
-~~~~~~~~~~~~~~~~~~~~~~~
+Frequently Asked Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Q: Your model predicts a lot of satellite trails my telescope! Does this mean that the quality of the images will be bad?**
 
-A: Absolutely not. The objective of this repository is not to predict the quality of individual images, or even individual telescopes. Specific missions and constellations change, adapt, and sometimes, even be canceled. The forecasts are intended to provide an approximate representation of the impact of satellite constellations for space based astronomy as a whole, not for specific missions. Our ultimate mission is to provide a measurement of the expected level of artificial satellite light contamination if the current trend of industrial use of Low Earth Orbit by using several space-based observatories as examples of potential platforms. By doing that, we can give educated guesses of the level of contamination for present and future missions, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management. 
+A: Absolutely not. The objective of this repository is not to predict the quality of individual images, or even individual telescopes. Specific missions and constellations change, adapt, and sometimes, even be canceled. The forecasts are intended to provide an approximate representation of the impact of satellite constellations for space based astronomy as a whole, not for specific missions. Our ultimate mission is to provide a measurement of the expected level of artificial satellite light contamination if the current trend of industrial use of Low Earth Orbit by using several space-based observatories as examples of potential platforms. But the real value is not the specific number for existing telescopes or proposals, but the constraints that the current conditions impose in **future** missions, some of them which will be designed by scientists that are still at school or in their early career. 
+
+By doing that, we can give educated guesses of the level of contamination for present and future missions, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management. 
 
 **Q: But these satellite do not exist now, why should I care?**
 

@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology &mdash; SPARKLES 1.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6efca38a"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Publications" href="publications.html" />
+    <link rel="prev" title="Observations" href="observations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPARKLES
+              <img src="_static/sparkles_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="forecast.html">Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Methodology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#space-telescope-orbit-and-attitude-simulation">Space telescope orbit and attitude simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#satellite-constellation-orbit">Satellite constellation orbit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#satellite-trail-brightness">Satellite trail brightness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whoarewe.html">Who is SPARKLES?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPARKLES</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Methodology</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/methods.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="methodology">
+<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading"></a></h1>
+<p>The methodology to simulate realistic satellite trails in space telescopes is described in our original publication in <em>Nature</em> <a class="reference external" href="https://www.nature.com/articles/s41586-025-09759-5">(Borlaff, Marcum, Howell 2025)</a>. However, we are continuously improving the models and simulations, and we will be including more details about the latest updates in the near future. In this section we provide a brief overview of the main constraints and assumptions of the simulations, as well as a description of the modeling approach and the algorithms used to detect satellite trails in the simulated images.</p>
+<section id="space-telescope-orbit-and-attitude-simulation">
+<h2>Space telescope orbit and attitude simulation<a class="headerlink" href="#space-telescope-orbit-and-attitude-simulation" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/sparkles_flowchart.png"><img alt="Satellite trail simulation methodology flowchart. Left to right: 1) Orbital scene, based on the survey plan, Earth and Moon ephemeris, telescope (observer) and artificial satellite orbits. 2) Estimated sky position of the satellites along the simulated exposure. 3) Filtering satellite trails that cross the field of view, and are illuminated by the Sun, the Moon, or Earth. 4) Final record of satellite trail contamination on each exposure." src="_images/sparkles_flowchart.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 1</strong>: Satellite trail simulation methodology flowchart. Left to right: 1) Orbital scene, based on the survey plan, Earth and Moon ephemeris, telescope (observer) and artificial satellite orbits. 2) Estimated sky position of the satellites along the simulated exposure. 3) Filtering satellite trails that cross the field of view, and are illuminated by the Sun, the Moon, or Earth. 4) Final record of satellite trail contamination on each exposure.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The satellite trail simulation process is schematized in Fig. 1. For each observatory, we assumed a survey plan that consisted of a series of pointings (right ascension and declination) taking place at an associated epoch (epoch at exposure start (<span class="math notranslate nohighlight">\(t_{\rm{start}}\)</span>) and exposure end (<span class="math notranslate nohighlight">\(t_{\rm{end}}\)</span>) with a certain exposure time (<span class="math notranslate nohighlight">\(t_{\rm{exp}} = t_{\rm{end}} - t_{\rm{start}}\)</span>). The available regions on the sky depend on the telescope orbit (as defined by the two-line element) and epoch (that is, a telescope cannot observe a region blocked by Earth), as well as specific survey constraints (Sun avoidance, Earth limb and maximum zenith angles) for each telescope, as summarized below. For <em>Hubble</em> simulations, we randomly selected archival exposures (right ascension, declination, <span class="math notranslate nohighlight">\(t_{\rm{start}}\)</span> and <span class="math notranslate nohighlight">\(t_{\rm{exp}}\)</span>) obtained with the wide-field channel of the Advanced Camera for Surveys during 2023–2024, assuming the closest orbit on time from its recorded history. The typical exposure time was <span class="math notranslate nohighlight">\({t}_{\exp }={540}_{-200}^{+530}\,{\rm{s}}\)</span>.</p>
+<p>To simulate the survey plan, orbital position and attitude of the SPHEREx, Xuntian and ARRAKIHS space telescopes, we chose random locations in the sky that were accessible with the adopted constraints of each telescope. For SPHEREx, we assumed a maximum zenital angle of 35°, a solar avoidance angle of 91° throughout the exposure and an exposure time of 112.5 s on <span class="math notranslate nohighlight">\(h = 650\)</span> km terminator-aligned Sun-synchronous orbit. Similarly, we chose <span class="math notranslate nohighlight">\(h = 800\)</span> km terminator-aligned Sun-synchronous orbit for ARRAKIHS, with a fixed exposure time of 600 s (ref. 22) and 55.7° Earth-limb angle.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the first version of the original manuscript, we assumed an Earth-limb angle of 7.6° for ARRAKIHS, similar to Hubble Space Telescope. However, ARRAKIHS is planned to observe at orientations closer to the zenith, with an Earth limb avoidance angle closer to 55.7°. Since it is more likely to find satellites at angles closer to the Earth limb, this angle makes ARRAKIHS much better shielded against the contamination of lower satellites, <strong>decreasing the trail rate per typical exposure under the same satellite population than previously predicted</strong> (see below). We have upgraded the values with the corrected 55.7° Earth limb angle value, (April 2026) and we published them in <a class="reference external" href="www.nature.com/articles/s41586-026-10553-0">this manuscript author correction</a>. The original predictions for Hubble Space Telescope, SPHEREx, and Xuntian are not affected by this change.</p>
+</div>
+<p>Finally, Xuntian was assigned the same orbit as the Tiangong Space Station (LEO; <span class="math notranslate nohighlight">\(h = 450\)</span> km; inclination <span class="math notranslate nohighlight">\(i = 41.47°\)</span>), a 55° solar avoidance angle, 7.6° Earth-limb angle during the whole exposure and a random exposure time following the same distribution as the Hubble observational record, on the basis of their similar available time-per-orbit, altitude, aperture and spatial resolution.</p>
+</section>
+<section id="satellite-constellation-orbit">
+<h2>Satellite constellation orbit<a class="headerlink" href="#satellite-constellation-orbit" title="Link to this heading"></a></h2>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/CSST_example.gif"><img alt="_images/CSST_example.gif" src="_images/CSST_example.gif" style="width: 100%;" />
+</a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/SPHEREx_example.gif"><img alt="_images/SPHEREx_example.gif" src="_images/SPHEREx_example.gif" style="width: 100%;" />
+</a>
+</figure>
+<p>The orbital parameters for the satellite constellations are generated using <a class="reference external" href="https://planet4589.org/space/con/conlist.html">Planet4589 public database</a>, which provides data on the orbital altitude, number of shells, number of orbital planes and satellites per plane for each FCC/ITU-registered satellite constellation. Several upgrades have been included in the latest version of the models:</p>
+<ul class="simple">
+<li><p>Satellite debris with available cross-sectional area estimations <a class="reference external" href="https://planet4589.org/space/supporting/asb/asb.html">(Planet4589 Satellite filtering list)</a> are now included in the models. We select the main bus diameter times span of longest appendage as the maximum cross-sectional area of the satellite in face-on orientation (<em>AREA 2</em>). Catalogued objects <a class="reference external" href="https://www.space-track.org/">(Space-track)</a> with a) sizes smaller than <span class="math notranslate nohighlight">\(&lt;1 mm^2\)</span>, b) not orbiting Earth, and c) flagged as <em>DOWN</em> (de-orbited), are removed from the simulation.</p></li>
+<li><p>Satellites with known dimensions (i.e., SpaceX Starlink Gen 1, 2, and xAI orbital data centers) have now a fixed area in the simulations. Those satellites for which their dimensions are unknown retain the original size distribution assumed in the original paper (1 – 125 <span class="math notranslate nohighlight">\(m^2`\)</span>).</p></li>
+<li><p>The models include the latest FCC/ITU announcements (March 2026) from CTC1 and CTC2 (96,714 satellites each), and the SpaceX Orbital Data Centers (SXODC, 1,000,000 satellites). The total number of satellites considered (included existing debris, dead, and active satellites, and proposed constellations) adds up to 1,843,084. <a class="reference external" href="https://planet4589.org/space/con/conlist.html">(Planet4589 :Satellite Constellation list)</a>.</p></li>
+</ul>
+</section>
+<section id="satellite-trail-brightness">
+<h2>Satellite trail brightness<a class="headerlink" href="#satellite-trail-brightness" title="Link to this heading"></a></h2>
+<p>The surface brightness of satellite trails depends on several factors, including the (1) brightness of the light source; (2) bidirectional reflectance distribution function <a class="reference external" href="https://www.nature.com/articles/s41586-025-09759-5#ref-CR40">[Greynolds et al. 2015]</a> of the satellite and its distance to the observer; and (3) orientation of the reflecting surfaces to the light source <a class="reference external" href="https://www.nature.com/articles/s41586-025-09759-5#ref-CR41">(Fankhauser, F., Tyson, J. A. &amp; Askari 2023)</a>. For order-of-magnitude estimations, we implemented some simplifying assumptions.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/earth_brightness_scheme.png"><img alt="Schematic representation of the different sources of light that can illuminate a satellite in Earth orbit. The Sun illuminates the satellite directly, but also indirectly through the reflected light from Earth (Earthshine) and the Moon (Moonshine). The satellite can also emit thermal radiation by itself, as well as reflected thermal radiation from Earth." src="_images/earth_brightness_scheme.png" style="width: 100%;" />
+</a>
+</figure>
+<p>A satellite located at a distance dsat (in metres) from a space telescope with a mirror diameter <span class="math notranslate nohighlight">\(D_{\rm{mir}}\)</span> crossing the FOV leaves a trail with a width <span class="math notranslate nohighlight">\(\theta_{\rm{sat}}\)</span> (in steradians) <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2022A%26A...657A..75B">(Bassa et al. 2022</a> <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2018MNRAS.474.4837B">, Bektešević et al. 2018)</a>:</p>
+<div class="math notranslate nohighlight">
+\[{\theta }_{{\rm{sat}}}^{2}=\left(\frac{{D}_{{\rm{sat}}}^{2}+\,{D}_{{\rm{mir}}}^{2}}{{d}_{{\rm{sat}}}^{2}}\right)+{\sigma }^{2}, (1)\]</div>
+<p>where σ represents the optical resolution of the telescope, and Dsat is the equivalent diameter (defined as the diameter of a circle with the same area) of the cross-sectional area of a satellite, assuming a random orientation with respect to the observer. The area of the extended solar panels in new-generation satellites can range from 1 <span class="math notranslate nohighlight">\(m^2`\)</span> to <span class="math notranslate nohighlight">\(125 m^2\)</span> <a class="reference external" href="https://arxiv.org/abs/2407.03092">(Mallama et al. 2017)</a>. In this study, we assumed a uniform distribution between these two extreme values.</p>
+<p>The reflected spectral flux density (<span class="math notranslate nohighlight">\(F_{R,{\rm sat}\to{\rm obs}}\)</span>; in <span class="math notranslate nohighlight">\(W m^{−2} Hz^{−1}\)</span>) of a LEO satellite with cross-sectional area Asat simulated as a Lambertian diffuse sphere can be approximated as a combination of the reflected light from the Sun (<span class="math notranslate nohighlight">\(F_{\odot\to{\rm sat}}\)</span>), the Earthshine (<span class="math notranslate nohighlight">\(F_{\oplus\to{\rm sat}}\)</span>), and the Moonshine (<span class="math notranslate nohighlight">\(F_{\rm{Moon}\to{\rm sat}}\)</span>) <a class="reference external" href="https://apps.dtic.mil/sti/html/tr/AD0419069/index.html">(Vallerie 1963)</a> as</p>
+<div class="math notranslate nohighlight">
+\[F_{R,{\rm sat}\to{\rm obs}} = \frac{\it{p}\it{A}_{\rm sat}}{\pi d_{\rm sat}^2} \times(\gamma_{\odot} F_{\odot\to{\rm sat}} + \gamma_{\oplus} F_{\oplus\to{\rm sat}} + \gamma_{{\rm{Moon}}}F_{\rm{Moon}\to{\rm sat}}), (2)\]</div>
+<p>where p is the albedo of the satellite, and <span class="math notranslate nohighlight">\(\gamma\)</span> depends on the satellite illumination phase angle (<span class="math notranslate nohighlight">\(\phi\)</span>) from each source (Sun, Moon and Earth) as</p>
+<div class="math notranslate nohighlight">
+\[\gamma =\frac{2}{3{\rm{\pi }}}(\sin \,\phi +({\rm{\pi }}-\phi )\cos \,\phi ). (3)\]</div>
+<p>In addition, satellites emit thermal black-body radiation (<span class="math notranslate nohighlight">\(F_{\rm{T,sat \to obs}}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[{F}_{{\rm{T}},\oplus \to {\rm{sat}}\to {\rm{obs}}}={\gamma }_{\oplus }\frac{{\epsilon }p{A}_{{\rm{sat}}}}{{d}_{{\rm{sat}}}^{2}}{\left(\frac{{R}_{\oplus }}{{R}_{\oplus }+{h}_{{\rm{sat}}}}\right)}^{2}B(\lambda ,{T}_{\oplus }). (4)\]</div>
+<p>where ϵ = 0.9 is the thermal emissivity <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=1986Icar...68..239L">(Lebofsky et al. 1986)</a> that reflects a fraction of thermal radiation from Earth (FT,⊕→sat→obs) as well <a class="reference external" href="https://apps.dtic.mil/sti/html/tr/AD0419069/index.html">(Vallerie 1963,</a> <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2020ApJ...905....3H">Horiuchi et al. 2020)</a>:</p>
+<div class="math notranslate nohighlight">
+\[{F}_{{\rm{T}},\oplus \to {\rm{sat}}\to {\rm{obs}}}={\gamma }_{\oplus }\frac{{\epsilon }p{A}_{{\rm{sat}}}}{{d}_{{\rm{sat}}}^{2}}{\left(\frac{{R}_{\oplus }}{{R}_{\oplus }+{h}_{{\rm{sat}}}}\right)}^{2}B(\lambda ,{T}_{\oplus }). (5)\]</div>
+<p>The total optical and infrared emission from a satellite (<span class="math notranslate nohighlight">\(F_{\rm{sat}}\)</span>; in <span class="math notranslate nohighlight">\(\rm{W m^{−2} Hz^{−1}}\)</span>) received by an observer would then be:</p>
+<div class="math notranslate nohighlight">
+\[{F}_{{\rm{sat}}}=\,{F}_{{\rm{R}},{\rm{sat}}\to {\rm{obs}}}+{F}_{{\rm{T}},{\rm{sat}}\to {\rm{obs}}}+\,{F}_{{\rm{T}},\oplus \to {\rm{sat}}\to {\rm{obs}}}. (6)\]</div>
+<p>Because the satellites move across the FOV, their flux is deposited on the detector along the trail. The surface brightness (<span class="math notranslate nohighlight">\(\Sigma_{\rm sat}\)</span>; in <span class="math notranslate nohighlight">\(\rm{W m^{−2} Hz^{−1} arcsec^{−2}}\)</span>) can be modelled as <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2020PASP..132k4502R">(Ragazzoni 2020)</a>:</p>
+<div class="math notranslate nohighlight">
+\[{\varSigma }_{{\rm{sat}}}=\frac{{F}_{{\rm{sat}}}}{{A}_{{\rm{trail}}}}\times \frac{{t}_{{\rm{eff}}}}{{t}_{\exp }} (7)\]</div>
+<p>where
+is the observed angular area of the satellite image, texp is the exposure time (in seconds) and</p>
+<p>is the effective time that a satellite that moves in the focal plane with an apparent angular velocity ωsat (<span class="math notranslate nohighlight">\(\rm{arcsec s^{−1}}\)</span>) takes to cross its own trail width (θsat). Finally, the surface brightness magnitude of the satellite trail µsat (in <span class="math notranslate nohighlight">\(\rm{mag arcsec^{−2}}\)</span>) will be:</p>
+<div class="math notranslate nohighlight">
+\[{\mu }_{\mathrm{sat}}=-2.5{\log }_{10}({\varSigma }_{\mathrm{sat}})-\mathrm{56.1.} (8)\]</div>
+<p>Following a previous study45, we assumed <span class="math notranslate nohighlight">\(T_{\oplus}= 290\)</span> K for the temperature of Earth and a surface temperature <span class="math notranslate nohighlight">\(T_{\rm{sat}}= 280\pm3\)</span> K for satellites. Ground-based measurements estimated that the optical and near-infrared albedoes can vary between 0.1 and 0.5 for LEO satellites <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2023PASJ...75..584H">(Horiuchi et al. 2023,</a> <a class="reference external" href="http://adsabs.harvard.edu/cgi-bin/nph-data_query?link_type=ABSTRACT&amp;bibcode=2024ApJ...966L..38T">Tyson et al. 2024)</a>, even higher (<span class="math notranslate nohighlight">\(p ≈ 1\)</span>) for small pieces of debris. For the purpose of this study, we assumed a uniform distribution for <span class="math notranslate nohighlight">\(p\)</span> in the range [0.1–0.5].</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/sed_satellites.png"><img alt="Spectral energy distribution of one of the simulated satellites." src="_images/sed_satellites.png" style="width: 100%;" />
+</a>
+</figure>
+<p>The V-band surface brightness magnitude of Sun-illuminated Earth is <span class="math notranslate nohighlight">\(\mu_{V}≈ 2\,\rm{mag arcsec^{−2}}\)</span>, whereas the magnitude of the full Moon is <span class="math notranslate nohighlight">\(m_{V}≈  −12.74\)</span>. To estimate the Earthshine (<span class="math notranslate nohighlight">\(F_{\oplus\to{\rm sat}}\)</span>) and Moonshine (<span class="math notranslate nohighlight">\(F_{\rm Moon \to \rm sat}\)</span>), we first scaled the solar spectral energy distribution <a class="reference external" href="https://doi.org/10.3847%2F1538-4365%2Faabfdf">(Willmer et al. 2018)</a> in the V-band to the observer magnitude from <a class="reference external" href="https://ssd.jpl.nasa.gov/horizons/">Jet Propulsion Laboratory Horizons</a> in the same band. We then integrated their spectral surface brightness by the visible illuminated area (in square degrees) for each satellite’s point of view. For the Moon, the illuminated area is defined by its phase at the epoch of the simulated exposure, whereas for Earthshine, only the areas inside the visible horizon can illuminate the satellite. Extended Data Fig. 6 represents two examples of the resulting contribution of each component to the total observed spectral energy distribution of the satellites.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="observations.html" class="btn btn-neutral float-left" title="Observations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="publications.html" class="btn btn-neutral float-right" title="Publications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, NASA Ames Research Center / Code S / Alejandro S. Borlaff.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

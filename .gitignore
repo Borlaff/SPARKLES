@@ -1,0 +1,5 @@
+*.fits
+*.dat
+launcher
+notebooks
+*.bsp

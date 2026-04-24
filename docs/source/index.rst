@@ -8,7 +8,7 @@ Project SPARKLES
 
 |pic1| |pic2| |pic3| |pic4|
 
-.. |pic1| image:: ../../images/NASA_meatball_logo.png
+.. |pic1| image:: ../../images/NASA_worm.png
    :width: 24%
 
 .. |pic2| image:: ../../images/Baeri.png

@@ -1,0 +1,12 @@
+README.md
+setup.py
+SPARKLES.egg-info/PKG-INFO
+SPARKLES.egg-info/SOURCES.txt
+SPARKLES.egg-info/dependency_links.txt
+SPARKLES.egg-info/requires.txt
+SPARKLES.egg-info/top_level.txt
+sparkles/__init__.py
+sparkles/earth.py
+sparkles/plots.py
+sparkles/satellites.py
+sparkles/spherex.py

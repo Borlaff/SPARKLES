@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: SPARKLES
+Version: 0.1.0
+Summary: A software to find satellite trails in Low Earth Orbit telescopes
+Home-page: https://github.com/Borlaff/Sparkles_I
+Author: Alejandro S. Borlaff
+Author-email: a.s.borlaff@nasa.gov
+License: BSD
+Keywords: CPS / Satellite trails / Mega-constellations / LEO
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: BSD License
+Requires-Dist: multiprocess
+Requires-Dist: bottleneck
+Requires-Dist: xmltodict
+Requires-Dist: romanisim @ git+https://github.com/spacetelescope/romanisim.git
+Requires-Dist: asdf
+Requires-Dist: cartopy
+Requires-Dist: healpy
+Requires-Dist: regions
+Requires-Dist: LSSTDESC.Coord
+Requires-Dist: numpy==1.26.4
+Requires-Dist: galsim
+Requires-Dist: skyfield @ git+https://github.com/Borlaff/python-skyfield.git
+Requires-Dist: tqdm
+Requires-Dist: pybind11>=2.12
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: numexpr
+Requires-Dist: astroquery
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: astropy_healpix
+Requires-Dist: pytest
+Requires-Dist: celluloid
+Requires-Dist: ipython
+Requires-Dist: pysynphot
+Requires-Dist: sphericalpolygon
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# SPARKLES
+
+Test

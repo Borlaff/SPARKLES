@@ -26,7 +26,7 @@ A: No, but we need to act now. The good news is that the problem of satellite li
 
 **Q: How can I help?**
 
-Visit the website of the `Center for the Protection of the Dark and Quiet Sky (CPS) <https://cps.iau.org/>`_ and become a protector of the Dark Sky! `(link here) <https://docs.google.com/forms/d/e/1FAIpQLSdFL6JviMl4-W3xIlWrZACFOWV-6B8SVptPpxTYtLZOXgUHmg/viewform>`_.
+Visit the website of the `IAU-CPS <https://cps.iau.org/>`_ and become a Member of the International Astronomical Union Centre for the Protection of the Dark and Quiet Sky! `(link here) <https://docs.google.com/forms/d/e/1FAIpQLSdFL6JviMl4-W3xIlWrZACFOWV-6B8SVptPpxTYtLZOXgUHmg/viewform>`_.
 
 If you would like to get involved in our team, feel free to `email us <mailto:a.s.borlaff@nasa.gov>`_.
 

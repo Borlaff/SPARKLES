@@ -1,0 +1,116 @@
+SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit
+
+Author: Alejandro S. Borlaff - NASA Ames Research Center
+
+Space Science and Astrobiology Division. April 2026.
+
+In this article we measure the number of artificial satellite trails appearing in a series of astronomical images obtained by the NASA SPHEREx space telescope, a near-infrared low Earth orbit observatory dedicated to the creation of an all-sky survey of 450 million galaxies. The following notebook produces the main plots generated in the article, which compare the satellite trail simulations based on Borlaff, Marcum and Howell (2025, Nature) with the observations of satellite trails from this article. 
+
+For publication in the Astronomical Journal.
+
+Data and code available on Zenodo. https://doi.org/10.5281/zenodo.17957748
+
+Dependencies:
+Python==3.10
+rosalia-wfi: https://pypi.org/project/rosalia-wfi/
+bootmedian: https://pypi.org/project/Bootmedian/
+ipykernel: conda install -n empty ipykernel --update-deps --force-reinstall
+pandas: https://pandas.pydata.org/
+numpy: https://numpy.org/
+astropy: https://www.astropy.org/
+
+
+
+Description:
+
+SPHEREx_trails_database.csv
+--------------------------------------------------------
+This table contains a series of identified satellite trails in real SPHEREx images, obtained between May 2025 and September 2025. The properties listed contain:
+
+
+ra: Average right ascension of the identified trail (degrees)
+dec: Average declination of the identified trail (degrees)
+pa: Position angle of the trail in equatorial coordinates (degrees, PA = 0 is North, + counter-clockwise).
+OBSID: SPHEREx Observation ID
+MJDOBS: Modified Julian Date of the observation.
+XPOSURE: [s] Exposure (integration) time                
+SGT_LAT_MIDPT: / [deg] Ground track latitude at midpoint    
+SGT_LON_MIDPT:  / [deg] Ground track longitude at midpoint   
+SGT_MIN_GCD2SAA:  / [deg] Closest ground track dist to SAA   
+SPS_ELON: [deg] Ecliptic longitude of planned telescope boresight 
+SPS_ELAT: [deg] Ecliptic latitude of planned telescope boresight  
+SPS_EPA: [deg] PA of FP y axis at planned boresight, E of ecl N  
+
+
+
+SPHEREx_ / HST_per_trail_database.csv
+--------------------------------------------------------
+This table contains the properties of the simulated satellite trails in SPHEREx and HST images:
+
+track_id: ID of the simulation
+telescope: Simulated telescope  
+mirror_radius: Radius of the telescope (m) 
+pixscale: Pixel scale of the detector (arcsec/pixel)
+nsats: Number of satellites in the simulation.  
+ra_obs: Right ascension of the observation (degrees). 
+dec_obs: Declination of the observation (degrees).
+ra_earth: Average right ascension of the Earth from the observatory (degrees). 
+dec_earth: Average declination of the Earth from the observatory (degrees). 
+ra_sun: Average right ascension of the Sun from the observatory (degrees). 
+dec_sun: Average declination of the Sun from the observatory (degrees).
+ra_moon: Average right ascension of the Moon from the observatory (degrees). 
+dec_moon:  Average declination of the Moon from the observatory (degrees).
+altitude_telescope: Altitude of the telescope over the surface of the Earth (km). 
+angular_radius_earth: Apparent angular radius on the Earth from the telescope (degrees).
+sep_obs_earth: Angular separation between the pointing and the Earth (degrees). 
+limb_angle: Angular distance between the limb of the Earth and the pointing (degrees).
+expstart: Modified Julian Date of the start of the exposure. 
+expend: Modified Julian Date of the end of the exposure. 
+phase_sat_sun: Apparent solar illumination phase of the satellite from the telescope. 
+phase_sat_moon: Apparent lunar illumination phase of the satellite from the telescope. 
+phase_sat_earth: Apparent Earthshine illumination phase of the satellite from the telescope. 
+exptime: Exposure time (s)
+exposure_name: Name of the exposure. 
+trail_epoch: Epoch of the satellite trail. 
+trail_time: Approximate time between satellite trail start and end (s). 
+sunlit_in_FOV: Is the satellite illuminated by the Sun? (bool).
+moonlit_in_FOV: Is the satellite illuminated by the Moon? (bool).
+dsat: Distance from the telescope to the satellite (m).
+omega_sat: Angular velocity of the satellite in the field of view (arcsec/s). 
+altitude_satellites: Altitude of the satellite (m).
+pa_trail: Position angle of the satellite trail (degrees, positive East of North)
+earthshine_sun_ratio: Ratio of the reflected Earthshine to the Solar radiation. 
+moon_phase: Solar phase of the Moon at the exposure epoch. 
+mu: Estimate surface brightness of the satellite trail (AB mag/arcsec2). 
+bool_detected: Is the satellite detectable? (bool)
+
+
+SPHEREx_ / HST_per_sim_db.csv
+--------------------------------------------------------
+This table contains the properties per simulation of the trails in SPHEREx and HST images:
+
+trail_list: Name of the simulation file. 
+crossing_trails: Number of detectable satellite trails in the simulated exposure. 
+exptime: Exposure time (s). 
+nsats_per_sim: Population of satellites in the simulation. 
+limb_angle_per_exp: Earth limb angle of the exposure (degrees)
+ntrails: Total number of satellites in the image (detectable and undetectable).  
+ntrails_sunlit:	Number of satellites illuminated by the Sun in the image. 
+ntrails_moonlit: Number of satellites illuminated by the Moon in the image. 
+
+spherex_per_bin_db.csv / hst_per_bin_db.csv
+--------------------------------------------------------
+
+This table contain the average number of satellite trails detected by SPHEREx and HST as a function of the total population of satellites in orbit. 
+
+Columns: Number of satellites in orbit. 
+Rows: 
+1 - Mean number of satellite trails per exposure.
+2/3 - 1 sigma confidence intervals for 1. 
+4/5 - 2 sigma confidence intervals for 1. 
+6/7 - 3 sigma confidence intervals for 1. 
+
+kruk_borlaff_26_db.csv
+--------------------------------------------------------
+This table contains the number of satellite trails [col: "hst_san_ntrails"] as a function of the number of satellites in orbit [col: "nsats"]. The estimation is based on the Equation 1 from  The impact of satellite trails on Hubble Space Telescope observations (Krul+23) [https://www.nature.com/articles/s41550-023-01903-3] applied to the satellite layer population described in Planet4589 [https://planet4589.org/space/con/conlist.html].
+

@@ -2,7 +2,7 @@ Methodology
 ================
 
 The methodology to simulate realistic satellite trails in space telescopes is described in our original publication in *Nature* `(Borlaff, Marcum, Howell 2025)
-<https://www.nature.com/articles/s41586-025-09759-5>`_. However, we are continuously improving the models and simulations, and we will be including more details about the latest updates in the near future. In this section we provide a brief overview of the main constraints and assumptions of the simulations, as well as a description of the modeling approach and the algorithms used to detect satellite trails in the simulated images.
+<https://www.nature.com/articles/s41586-025-09759-5>`_. We are continuously improving the models and simulations, and we will be including more details about the latest updates in the near future. In this section we provide a brief overview of the main constraints and assumptions of the simulations, as well as a description of the modeling approach and the algorithms used to detect satellite trails in the simulated images.
 
 Space telescope orbit and attitude simulation
 --------------------------------------------------------------------
@@ -18,13 +18,13 @@ The satellite trail simulation process is schematized in Fig. 1. For each observ
 To simulate the survey plan, orbital position and attitude of the SPHEREx, Xuntian and ARRAKIHS space telescopes, we chose random locations in the sky that were accessible with the adopted constraints of each telescope. For SPHEREx, we assumed a maximum zenital angle of 35°, a solar avoidance angle of 91° throughout the exposure and an exposure time of 112.5 s on :math:`h = 650` km terminator-aligned Sun-synchronous orbit. Similarly, we chose :math:`h = 800` km terminator-aligned Sun-synchronous orbit for ARRAKIHS, with a fixed exposure time of 600 s (ref. 22) and 55.7° Earth-limb angle.
 
 .. note::
-   In the first version of the original manuscript, we assumed an Earth-limb angle of 7.6° for ARRAKIHS, similar to Hubble Space Telescope. However, ARRAKIHS is planned to observe at orientations closer to the zenith, with an Earth limb avoidance angle closer to 55.7°. Since it is more likely to find satellites at angles closer to the Earth limb, this angle makes ARRAKIHS much better shielded against the contamination of lower satellites, **decreasing the trail rate per typical exposure under the same satellite population than previously predicted** (see below). We have upgraded the values with the corrected 55.7° Earth limb angle value, (April 2026) and we published them in `this manuscript author correction <www.nature.com/articles/s41586-026-10553-0>`_. The original predictions for Hubble Space Telescope, SPHEREx, and Xuntian are not affected by this change. 
+   In the first version of the original manuscript, we assumed an Earth-limb angle of 7.6° for ARRAKIHS, similar to Hubble Space Telescope. However, ARRAKIHS is planned to observe at orientations closer to the zenith, with an Earth limb avoidance angle closer to 55.7°. Since it is more likely to find satellites at angles closer to the Earth limb, this angle makes ARRAKIHS much better shielded against the contamination of lower satellites, **decreasing the trail rate per typical exposure under the same satellite population than previously predicted** (see below). We have upgraded the values with the corrected 55.7° Earth limb angle value, (April 2026) and we published them in `this manuscript author correction <https://www.nature.com/articles/s41586-026-10553-0>`_. The original predictions for Hubble Space Telescope, SPHEREx, and Xuntian are not affected by this change. 
 
 
 Finally, Xuntian was assigned the same orbit as the Tiangong Space Station (LEO; :math:`h = 450` km; inclination :math:`i = 41.47°`), a 55° solar avoidance angle, 7.6° Earth-limb angle during the whole exposure and a random exposure time following the same distribution as the Hubble observational record, on the basis of their similar available time-per-orbit, altitude, aperture and spatial resolution.
 
 
-Satellite constellation orbit
+Satellite constellation orbits
 --------------------------------------------------------------------
 
 .. figure:: ../../images/CSST_example.gif
@@ -32,6 +32,10 @@ Satellite constellation orbit
 
 .. figure:: ../../images/SPHEREx_example.gif
    :width: 100%
+   :alt: **Figures 2 and 3**: All-sky view for two simulated exposures from Xuntian Space Telescope (top) and SPHEREx (bottom).
+
+**Figures 2 and 3**: *All-sky view for two simulated exposures from Xuntian Space Telescope (top) and SPHEREx (bottom). The red squares represent the field of view of each telescope, and the colour-coded moving dots represent the position and distance (size) of the satellites on a 360 degree view of the sky. Yellow satellites represent those that are illuminated by the Sun and visible from the point of view of the telescope. Orange satellites are Sun-illuminated but blocked by the Earth. White (visible) and grey (blocked) are not illuminated by the Sun, but might emit Earthshine, Moonshine, or thermal radiation.*
+
 
 The orbital parameters for the satellite constellations are generated using `Planet4589 public database <https://planet4589.org/space/con/conlist.html>`_, which provides data on the orbital altitude, number of shells, number of orbital planes and satellites per plane for each FCC/ITU-registered satellite constellation. Several upgrades have been included in the latest version of the models: 
 
@@ -57,7 +61,7 @@ A satellite located at a distance dsat (in metres) from a space telescope with a
 .. math::
     {\theta }_{{\rm{sat}}}^{2}=\left(\frac{{D}_{{\rm{sat}}}^{2}+\,{D}_{{\rm{mir}}}^{2}}{{d}_{{\rm{sat}}}^{2}}\right)+{\sigma }^{2}, (1)
 
-where σ represents the optical resolution of the telescope, and Dsat is the equivalent diameter (defined as the diameter of a circle with the same area) of the cross-sectional area of a satellite, assuming a random orientation with respect to the observer. The area of the extended solar panels in new-generation satellites can range from 1 :math:`m^2`` to :math:`125 m^2` `(Mallama et al. 2017) <https://arxiv.org/abs/2407.03092>`_. In this study, we assumed a uniform distribution between these two extreme values.
+where σ represents the optical resolution of the telescope, and Dsat is the equivalent diameter (defined as the diameter of a circle with the same area) of the cross-sectional area of a satellite, assuming a random orientation with respect to the observer. The area of the extended solar panels in new-generation satellites can range from 1 :math:`m^2` to :math:`125 m^2` `(Mallama et al. 2017) <https://arxiv.org/abs/2407.03092>`_. In this study, we assumed a uniform distribution between these two extreme values.
 
 The reflected spectral flux density (:math:`F_{R,{\rm sat}\to{\rm obs}}`; in :math:`W m^{−2} Hz^{−1}`) of a LEO satellite with cross-sectional area Asat simulated as a Lambertian diffuse sphere can be approximated as a combination of the reflected light from the Sun (:math:`F_{\odot\to{\rm sat}}`), the Earthshine (:math:`F_{\oplus\to{\rm sat}}`), and the Moonshine (:math:`F_{\rm{Moon}\to{\rm sat}}`) `(Vallerie 1963) <https://apps.dtic.mil/sti/html/tr/AD0419069/index.html>`_ as
 

@@ -42,11 +42,11 @@ References
 
 `Borlaff et al. (2025) - Database in Zenodo <https://zenodo.org/records/16884458>`_ 
 
-2 - SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *In revision by The Astronomical Journal*. 
+2 - SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. 
 
-Paper in NASA/ADS: *In revision by The Astronomical Journal*.
+- Paper in NASA/ADS: *Available as an ArXiV preprint (28 May 2026)*.
 
-`Borlaff et al. (2026) - Database in Zenodo <10.1038/s41586-025-09759-5>`_
+- `Borlaff et al. (2026) - Database in Zenodo <10.1038/s41586-025-09759-5>`_
 
 Related Articles
 -------------------------------

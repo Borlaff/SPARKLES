@@ -1080,172 +1080,6 @@ def find_mjd_entrance_and_exit_FOV(trail_db, verbose=False):
             "epoch_in_FOV": epoch_in_FOV,  "sunlit_in_FOV": sunlit_in_FOV,  "moonlit_in_FOV": moonlit_in_FOV})
 
 
-def reap_trail_results(track_list):
-    import pandas as pd
-    import numpy as np
-    import os
-    nsats = np.zeros(len(track_list))
-    ntrails = np.zeros(len(track_list))
-    ntrails_sunlit = np.zeros(len(track_list))
-    ntrails_moonlit = np.zeros(len(track_list))
-
-    expstart = np.zeros(len(track_list))
-    expend = np.zeros(len(track_list))
-    ra = np.zeros(len(track_list))
-    dec = np.zeros(len(track_list))
-    pa = np.zeros(len(track_list))
-
-    ra_FOV_mean = np.zeros(len(track_list))
-    dec_FOV_mean = np.zeros(len(track_list))
-    msat_sun_list = []
-    msat_moon_list = []
-    musat_sun_list = []
-    musat_obs_list = []
-    musat_moon_list = []
-    musat_SED_list = []
-    sat_name_all = []
-    sat_name_sunlit = []
-    sat_name_moonlit = []
-    dsat_list = []
-    omega_list = []
-    exptime_list = []
-    nsats_list = []
-
-    sunlit_bool_list = []
-    wavelength  = []
-    trail_epoch = []
-    trail_time = []
-    moonlit_in_FOV_list = []
-    sunlit_in_FOV_list = []
-    ra_fov =  []
-    dec_fov =  []
-    track_id =  []
-    track_id_per_sat =  []
-
-    for i in tqdm(range(len(track_list))):
-        try:
-            track_db_i = rs.utils.load_dict(track_list[i])
-        except:
-            print("Bad file! Jumping")
-            os.system("rm " + track_list[i])
-            continue
-
-        in_FOV_parameters = find_mjd_entrance_and_exit_FOV(track_db_i)
-        ntrails[i] = track_db_i["highres_in_FOV_trails"]["N_trails_highres"]
-        ntrails_sunlit[i] = np.sum(in_FOV_parameters["sunlit_in_FOV"])
-        ntrails_moonlit[i] = np.sum(in_FOV_parameters["moonlit_in_FOV"])
-        pa[i] = in_FOV_parameters["pa"]
-        expstart[i] = track_db_i["basic_configuration"]["exposure_params"]["mjd_start"]
-        expend[i] = track_db_i["basic_configuration"]["exposure_params"]["mjd_end"]
-        expstart_astropy_time = Time(expstart[i], format='mjd')
-        expend_astropy_time = Time(expend[i], format='mjd')
-        exptime = (expend_astropy_time-expstart_astropy_time).to("second").value
-        ra[i] = track_db_i["basic_configuration"]["exposure_params"]["ra"]
-        dec[i] = track_db_i["basic_configuration"]["exposure_params"]["dec"]
-        nsats[i]   = float(track_list[i].split("NSATS")[-1].replace(".dat",""))
-        ra_FOV_mean[i] = np.mean(track_db_i["basic_configuration"]["ra_FOV"])
-        dec_FOV_mean[i] = np.mean(track_db_i["basic_configuration"]["dec_FOV"])
-
-        trail_epoch = trail_epoch + list(in_FOV_parameters["trail_epoch"])
-        trail_time = trail_time + list(in_FOV_parameters["trail_time"])
-        distance_and_omega = distance_and_omega_to_observer_in_trail(track_db_i)
-        dsat = distance_and_omega["distance_to_observer"]
-        omega = distance_and_omega["omega"]
-        trail_movement = distance_and_omega["trail_movement"]
-
-        dsat_list = dsat_list + list(dsat)
-        omega_list = omega_list + list(omega)
-        sat_name_all = sat_name_all + list(track_db_i["highres_in_FOV_trails"]["sat_name"])
-        sat_name_sunlit = sat_name_sunlit + list(track_db_i["highres_in_FOV_trails"]["sat_name"][in_FOV_parameters["sunlit_in_FOV"]])
-        sat_name_moonlit = sat_name_moonlit + list(track_db_i["highres_in_FOV_trails"]["sat_name"][in_FOV_parameters["moonlit_in_FOV"]])
-        sunlit_bool_list = sunlit_bool_list + list(track_db_i["highres_in_FOV_trails"]["sat_name"])
-        moonlit_in_FOV_list = moonlit_in_FOV_list + list(in_FOV_parameters["moonlit_in_FOV"])
-        sunlit_in_FOV_list = sunlit_in_FOV_list + list(in_FOV_parameters["sunlit_in_FOV"])
-        #wavelength = brightness_satellite_i["wavelength"]
-        exptime_list = exptime_list + [exptime]*len(dsat)
-        nsats_list = nsats_list + [nsats[i]]*len(dsat)
-        track_id_per_sat = track_id_per_sat + [int(track_list[i].split("_")[4])]*len(dsat)
-        track_id = track_id + [int(track_list[i].split("_")[4])]
-
-        ra_fov = ra_fov + [track_db_i["basic_configuration"]["exposure_params"]["ra"]]*len(dsat)
-        dec_fov = dec_fov + [track_db_i["basic_configuration"]["exposure_params"]["ra"]]*len(dsat)
-        #print(track_list[i].split("_")[4])
-
-
-        #brightness_satellite_i = brightness_satellite_trails(track_db_i)
-        #msat_sun_list = msat_sun_list + list(brightness_satellite_i["msat_sun"])
-        #msat_moon_list = msat_moon_list + list(brightness_satellite_i["msat_moon"])
-        #musat_obs_list = musat_obs_list + list(brightness_satellite_i["mu_obs"])
-        #musat_sun_list = musat_sun_list + list(brightness_satellite_i["musat_sun"])
-        #musat_moon_list = musat_moon_list + list(brightness_satellite_i["musat_moon"])
-        #musat_SED_list.append(list(brightness_satellite_i["musat_SED_sun"]))
-        #print(musat_sun_list)
-
-    # Estimate the Moon phase on the trail_epoch
-    ra_fov = np.array(ra_fov)
-    dec_fov = np.array(dec_fov)
-
-    # Estimate the % of earthshine
-    TLEs = sp.satellites.find_TLE_from_sparkles_db(sat_names=sat_name_all)
-    earthshine_sun_ratio = np.zeros(len(trail_epoch))
-    altitude_satellites = np.zeros(len(trail_epoch))
-    moon_phase = np.zeros(len(trail_epoch))
-    ra_earth = np.zeros(len(trail_epoch))
-    dec_earth = np.zeros(len(trail_epoch))
-
-    for satellite_i in tqdm(range(len(sat_name_all))):
-       moon_phase[satellite_i] = sp.earth.moon_phase(epoch=trail_epoch[satellite_i])
-       earthshine_illumination_sat_i = earthshine_illumination(epoch=trail_epoch[satellite_i], TLE=TLEs[satellite_i])
-       earthshine_sun_ratio[satellite_i] = earthshine_illumination_sat_i["earthshine_sun_ratio"]
-       altitude_satellites[satellite_i] = earthshine_illumination_sat_i["altitude"].to("m").value
-       ra_earth[satellite_i] = earthshine_illumination_sat_i["ra_earth"]
-       dec_earth[satellite_i] = earthshine_illumination_sat_i["dec_earth"]
-
-
-    mirror_radius =  track_db_i["basic_configuration"]["telescope"].mirror_radius.to("m").value
-    pixel_scale = track_db_i["basic_configuration"]["telescope"].get_pixscale(track_db_i["basic_configuration"]["instrument"])
-
-
-    db_total_trails = {"mirror_radius":mirror_radius,
-                       "pixel_scale": pixel_scale,
-                       "nsats": np.array(nsats),
-                       "ntrails": np.array(ntrails),
-                       "ntrails_sunlit": np.array(ntrails_sunlit),
-                       "ntrails_moonlit": np.array(ntrails_moonlit),
-                       "track": np.array(track_list),
-                       "dsat": np.array(dsat_list),
-                       "omega_sat": np.array(omega_list),
-                       "expstart": np.array(expstart),
-                       "expend": np.array(expend),
-                       "exptime": np.array(exptime_list),
-                       "nsats": np.array(nsats_list),
-                       "trail_epoch": np.array(trail_epoch),
-                       "trail_time": np.array(trail_time),
-                       "sunlit_bool": np.array(sunlit_bool_list),
-                       "moon_phase": np.array(moon_phase),
-                       "altitude_satellites": np.array(altitude_satellites),
-                       "ra_earth": np.array(ra_earth),
-                       "dec_earth": np.array(dec_earth),
-                       "ra_fov": np.array(ra_fov),
-                       "dec_fov": np.array(dec_fov),
-                       "pa_trail": np.array(pa),
-                       "track_id": np.array(track_id),
-                       "track_id_per_sat": np.array(track_id_per_sat),
-                       #"msat_sun": msat_sun_list,
-                       #"msat_moon": msat_moon_list,
-                       #"musat_obs": musat_obs_list,
-                       #"musat_sun": musat_sun_list,
-                       #"musat_moon": musat_moon_list,
-                       #"musat_SED_list": musat_SED_list,
-                       #"wavelength": wavelength,
-                       "sunlit_in_FOV": np.array(sunlit_in_FOV_list),
-                       "moonlit_in_FOV": np.array(moonlit_in_FOV_list),
-                       "earthshine_sun_ratio": np.array(earthshine_sun_ratio),
-                       "sat_name_all" : np.array(sat_name_all),
-                       "sat_name_sunlit": np.array(sat_name_sunlit),
-                       "sat_name_moonlit": np.array(sat_name_moonlit)}
-    return(db_total_trails)
-
 ################################
 
 def find_satellite_trails(telescope, instrument, detector, exposure_params, constellation,
@@ -2094,7 +1928,9 @@ def reap_trail_results(track_list, min_sat_size=1, max_sat_size=125, fully_rando
         h_telescope = 450000*u.m
     if telescope_string == "ARRAKIHS":
         h_telescope = 800000*u.m
-        
+    if telescope_string == "MESSIER":
+        h_telescope = 900000*u.m
+
     radec_obs   = SkyCoord(ra_obs*u.deg,   dec_obs*u.deg, frame='icrs')
     radec_earth = SkyCoord(ra_earth*u.deg, dec_earth*u.deg, frame='icrs')
     sep_obs_earth = radec_earth.separation(radec_obs).to(u.deg).value
@@ -2126,14 +1962,12 @@ def reap_trail_results(track_list, min_sat_size=1, max_sat_size=125, fully_rando
     
     brightness_db = sp.satellites.brightness_satellite_trails(trail_db = for_brightness_db, min_sat_size=min_sat_size, max_sat_size=max_sat_size, fully_random=fully_random)
 
-
-    
     # Find the average wavelength for each telescope. 
     #hst_mean_wave = (0.2+1.7)/2
     #csst_mean_wave = (0.2+1.1)/2
     #arrakihs_mean_wave = (0.38+1.6)/2
     #spherex_mean_wave = (5.0+0.75)/2
-
+    messier_wave_id = 22
     hst_wave_id = 27
     csst_wave_id = 22
     arrakihs_wave_id = 28
@@ -2143,11 +1977,13 @@ def reap_trail_results(track_list, min_sat_size=1, max_sat_size=125, fully_rando
     mu_csst = -2.5*np.log10(brightness_db["surface_brightness"][csst_wave_id,:]) + 8.9
     mu_arrakihs = -2.5*np.log10(brightness_db["surface_brightness"][arrakihs_wave_id,:]) + 8.9 
     mu_spherex = -2.5*np.log10(brightness_db["surface_brightness"][spherex_wave_id,:]) + 8.9
+    mu_messier = -2.5*np.log10(brightness_db["surface_brightness"][messier_wave_id,:]) + 8.9
 
     # Is the trail detectable? 
     if telescope_string == "SPHEREx":
         mu = mu_spherex
         bool_detected = mu < 24.63
+
     if telescope_string == "HST":
         mu = mu_hst
         bool_detected = mu < 25.75
@@ -2160,6 +1996,9 @@ def reap_trail_results(track_list, min_sat_size=1, max_sat_size=125, fully_rando
         mu = mu_arrakihs
         bool_detected = mu < 26.31
         
+    if telescope_string == "MESSIER":
+        mu = mu_messier
+        bool_detected = mu < -999999
     
         
     # nsims_with_visible_trail

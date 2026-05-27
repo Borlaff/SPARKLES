@@ -27,10 +27,10 @@ Overcrowding of Low Earth Orbit (LEO) by artificial satellite constellations is 
 .. figure:: ../../images/cover_nature_compressed.jpg
    :width: 100%
 
-The **SPARKLES** project started at NASA Ames Research Center aiming to answer the following question: *How frequent are satellite trails will be in the future for space telescopes?*. In `(Borlaff, Marcum, Howell 2025)
-<https://www.nature.com/articles/s41586-025-09759-5>`_ we discovered that if the current plans for satellite constellations are implemented, almost every single image from current and future space telescopes (96%) will show artificial light contamination from satellites, and the levels and extent of the pollution could greatly increase in the next decades. Artificial satellite trails would have a significant impact on the potential scientific return of some of these missions, as well as on the public's access to the wonders of the Universe.
+The **SPARKLES** project started at NASA Ames Research Center aiming to answer the following question: *How frequent are satellite trails will be in the future for space telescopes?*. In `Borlaff, Marcum, and Howell (2025)
+<https://www.nature.com/articles/s41586-025-09759-5>`_ we discovered that if the current plans for satellite constellations are implemented, almost every single image from current and future space telescopes (>92%) will show artificial light contamination from satellites, and the levels and extent of the pollution could greatly increase in the next decades. Artificial satellite trails would have a significant impact on the potential scientific return of some of these missions, as well as on the public's access to the wonders of the Universe. 
 
-In its current stage (April 2026), the *SPARKLES* project aims to provide a long-term repository of accurate forecasts of satellite trail frequencies on various space-based observatories, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management.
+In its current stage (May 2026), the *SPARKLES* project aims to provide a long-term repository of accurate forecasts of satellite trail frequencies on various space-based observatories, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management.
 
 .. note::
 
@@ -47,18 +47,18 @@ Latest Satellite Trail Forecast - April 16th, 2026
    :width: 100%
    :alt: Mean number of satellite trails per exposure as a function of satellite population
    
-   **Figure 1**: Mean number of satellite trails per exposure as a function of the population of artificial satellites in Earth orbit.
+   **Figure 1**: Average number of satellite trails per exposure observed in SPHEREx observations compared against the predicted trail rate from B25, as a function of the population of artificial satellites in Earth orbit (lower x−axis) and epoch (upper x−axis). Blue diamond : Observed average number of satellite trails in SPHEREx images. The different lines represent simulated models for the following observatories. Blue: SPHEREx. Black: Hubble Space Telescope. Contours represent the 95% confidence levels for the mean number of trails. Dashed-dotted line: Predicted number of satellite trails based on S. Kruk et al. (2023). Grey squares: Observer trails in Hubble from 2002–2021 (S. Kruk et al. 2023). Horizontal solid line: One trail per exposure critical contamination level.
 
 Changelog
 --------------
 
-- Satellite debris with available cross-sectional area estimations *Planet4589* Satellite filtering list: (https://planet4589.org/space/supporting/asb/asb.html) are now included in the models. We select the main bus diameter times span of longest appendage as the maximum cross-sectional area of the satellite in face-on orientation (*AREA 2*). Catalogued objects (Space-track: (https://www.space-track.org/) with a) sizes smaller than <1 mm2, b) not orbiting Earth, and c) flagged as *DOWN* (de-orbited), are removed from the simulation. 
+- Satellite debris with available cross-sectional area estimations (`*Planet4589* Satellite filtering list <https://planet4589.org/space/supporting/asb/asb.html>`_) are now included in the models. We select the main bus diameter times span of longest appendage as the maximum cross-sectional area of the satellite in face-on orientation (*AREA 2*). Catalogued objects (`Space-track <https://www.space-track.org/>`_) with a) sizes smaller than <1 mm2, b) not orbiting Earth, and c) flagged as *DOWN* (de-orbited), are removed from the simulation. 
 
 
 - Satellites with known dimensions (i.e., SpaceX Starlink Gen 1, 2, and xAI orbital data centers) have now a fixed area in the simulations. Those satellites for which their dimensions are unknown retain the original size distribution assumed in the original paper (1 -- 125 m2).
 
 
-- The models include the latest FCC/ITU announcements (March 2026) from CTC1 and CTC2 (96,714 satellites each), and the SpaceX Orbital Data Centers (SXODC, 1,000,000 satellites). The total number of satellites considered (included existing debris, dead, and active satellites, and proposed constellations) adds up to 1,843,084. *Planet4589*: Satellite Constellation list: (https://planet4589.org/space/con/conlist.html)
+- The models include the latest FCC/ITU announcements (March 2026) from CTC1 and CTC2 (96,714 satellites each), and the SpaceX Orbital Data Centers (SXODC, 1,000,000 satellites). The total number of satellites considered (included existing debris, dead, and active satellites, and proposed constellations) adds up to 1,843,084. (`*Planet4589*: Satellite Constellation list <https://planet4589.org/space/con/conlist.html>`_). 
 
 
 .. toctree::
@@ -71,11 +71,5 @@ Changelog
    publications
    resources
    whoarewe
+   policy
 
-
-Disclaimer
---------------
-
-This project is a NASA Ames Research Center effort to provide forecasts of satellite trail contamination for space-based astronomy. The forecasts are based on the best available data and models at the time of publication, but they are subject to change as new information becomes available. Our purpose is to support astronomical missions by providing the best forecast possible about artificial light pollution, and cannot be considered an evaluation of the capabilities or success of any of these missions. We love telescopes, astronomy, and space science, and we do our best to support it.  
-
-The authors thank Meredith Rawls, Leslie Sage, Paul Woods, Casiana Muñoz Tuñón, Aaron Mckinnon, Nahum Alem, Rocio Velasco Poblaciones, John E. Beckman, Brendan P. Crill, and the SPHEREx team for their support and careful reviews. The authors acknowledge the support of the International Astronomical Union (IAU) Centre for the Protection of the Dark and Quiet Sky (CPS). The Centre coordinates collaborative and multidisciplinary international efforts from institutions and individuals working across multiple geographic areas, seeks to raise awareness, and mitigate the negative impact of satellite constellations on ground-based optical, infrared and radio astronomy observations as well as on humanity’s enjoyment of the night sky. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the NASA, BAERI, IAU, NSF NOIRLab, SKAO, ESO, or any host or member institution of the IAU/CPS. The use of NASA, BAERI, and the IAU/CPS logos only represent the affiliation of the project members and associates and does not imply, endorse, or inform about the official views of any government agency.

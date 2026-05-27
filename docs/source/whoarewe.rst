@@ -7,6 +7,9 @@ Who is SPARKLES?
 
 **SPARKLES** is being built and supported by the RACCOONS team at the Space Science and Astrobiology division of the NASA Ames Research Center. The RACCOONS team is a group of scientists and engineers dedicated to understanding and mitigating the impact systematic effects on astronomical observations, among many other research areas. We work closely with the International Astronomical Union's Center for the Protection of the Dark and Quiet Sky from Satellite Constellation Interference (CPS) to coordinate efforts between astronomers, industry, and government agencies to find solutions to this problem.
 
+
+The authors thank Meredith Rawls, Leslie Sage, Paul Woods, Casiana Muñoz Tuñón, Aaron Mckinnon, Nahum Alem, Rocio Velasco Poblaciones, John E. Beckman, Brendan P. Crill, and the SPHEREx team for their support and careful reviews. The authors acknowledge the support of the International Astronomical Union (IAU) Centre for the Protection of the Dark and Quiet Sky (CPS). 
+
 If you have any questions, suggestions, or want to contribute to the project, please do not hesitate to `contact us <a.s.borlaff@nasa.gov>`_.
 
 **The SPARKLES team is:**
@@ -22,3 +25,4 @@ Pablo M. Sanchez-Alarcon - NASA Ames Research Center
 David Dubois - Centre de recherche sur les Ions, les Matériaux et la Photonique Université Caen Normandie, ENSICAEN, CNRS, CEA
 
 Jonathan McDowell  - Space Research Centre, Durham University, Stockton Rd, Durham, DH1 3LE, UK
+

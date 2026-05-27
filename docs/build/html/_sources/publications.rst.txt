@@ -6,7 +6,7 @@ How to Cite SPARKLES
 
 If you make use of the SPARKLES forecasts, models, or data in your research, please cite the following publications:
 
-**Satellite megaconstellations will threaten space-based astronomy** - *Borlaff, Marcum & Howell* (2025):  *Nature*, Volume 648, Issue 8092, pp. 51-57. **DOI**: `10.1038/s41586-025-09759-5 <https://doi.org/10.1038/s41586-025-09759-5>`_
+1 - **Satellite megaconstellations will threaten space-based astronomy** - *Borlaff, Marcum & Howell* (2025):  *Nature*, Volume 648, Issue 8092, pp. 51-57. **DOI**: `10.1038/s41586-025-09759-5 <https://doi.org/10.1038/s41586-025-09759-5>`_
 
 .. code-block:: bibtex
     
@@ -28,7 +28,11 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
 `Borlaff et al. (2025) - Paper in NASA/ADS <https://ui.adsabs.harvard.edu/abs/2025Natur.648...51B/abstract>`_ 
 
 
-**Zenodo: Satellite megaconstellations will threaten space-based astronomy** - *Borlaff, Alejandro S.* (2025): *Zenodo*. **DOI**: `10.5281/zenodo.17655052 <https://doi.org/10.5281/zenodo.17655052>`_
+2 - **Zenodo: Satellite megaconstellations will threaten space-based astronomy** - *Borlaff, Alejandro S.* (2025): *Zenodo*. **DOI**: `10.5281/zenodo.17655052 <https://doi.org/10.5281/zenodo.17655052>`_
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.17655052.svg
+  :target: https://doi.org/10.5281/zenodo.17655052
+
 
 .. code-block:: bibtex
 
@@ -42,11 +46,15 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
           url          = {https://doi.org/10.5281/zenodo.17655052},
          }
 
-**SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <../../../PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
+3 - **SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <https://raw.githubusercontent.com/Borlaff/SPARKLES/main/PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
 
-*Soon available as an ArXiV preprint (28 May 2026)*.
+*Soon available as an ArXiV preprint (28 May 2026). In processing by The Astronomical Journal.*.
 
-- `Borlaff et al. (2026) - Database in Zenodo <10.1038/s41586-025-09759-5>`_
+
+4 - **Zenodo: SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit**. Borlaff et al. (2026) - Public Database.
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.17957748.svg
+  :target: https://doi.org/10.5281/zenodo.17957748
 
 
 Related Articles

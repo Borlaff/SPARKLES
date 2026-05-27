@@ -6,7 +6,7 @@ The forecast is updated as we receive new data from both the satellite constella
 Latest Satellite Trail Forecast (v3, April 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Published in *SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit* (Borlaff et al. 2026). Currently in revision for publication in The Astronomical Journal. 
+Published in *SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit* `(Borlaff et al. 2026) <https://raw.githubusercontent.com/Borlaff/SPARKLES/main/PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_. Accepted for publication in The Astronomical Journal. 
 
 .. figure:: ../../MODELS/latest_ntrails_vs_nsats.png
    :width: 100%

@@ -7,7 +7,7 @@ SPHEREx confirms predictions for artificial satellite trail pollution in Low Ear
 In a second paper (Borlaff et al. 2026, accepted for publication by The Astronomical Journal), we present the first observational confirmation of the `Borlaff, Marcum, and Howell (2025)
 <https://www.nature.com/articles/s41586-025-09759-5>`_ predictions using data from the SPHEREx space telescope. We find that the observed satellite trail frequencies in SPHEREx data are consistent with our forecasts, confirming that satellite megaconstellations are already impacting space-based astronomy and will continue to do so in the future.
 
-All the data and models used in this paper are available in the `associated Zenodo repository <https://doi.org/10.5281/zenodo.17957748>`_, including the identification of satellite trails in SPHEREx images, their exposure IDs, projected sky positions and orientations. 
+All the data and models used in this paper are available in the `associated Zenodo repository <https://doi.org/10.5281/zenodo.17957748>`_, including the identification of satellite trails in SPHEREx images, their exposure IDs, projected sky positions and orientations. `The accepted version of the manuscript is publicly available here <https://raw.githubusercontent.com/Borlaff/SPARKLES/main/PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
 
 
 .. figure:: ../../images/PAPER_2/2025W18_1B_0393_annotated_lite.jpeg

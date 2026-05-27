@@ -32,8 +32,6 @@ Previous models
 Nature publication (v2, January 2026)
 ------------------------------
 
-
-
 In the version of the article initially published, in the “Space telescope orbit and attitude simulation” section of the Methods, the article assumed that the minimum Earth limb angle for ARRAKIHS was 7.6°, the same value as that of Hubble Space Telescope, while the angle adopted by the mission proposal is 55.7°. As a consequence, the satellite trail frequency per exposure, percentage of affected exposures, and area affected per image in the original version for ARRAKIHS thus would correspond to a Sun-synchronous terminator aligned telescope with an orbit altitude of 800 km, a 1.4 degree2 field of view, and a minimum limb angle of 7.6° (now designated, “800 km SSTA”, see corrected Figure 1). Adopting a 55.7° minimum Earth limb angle, the results for ARRAKIHS `(as proposed to ESA in January 2026) <https://ui.adsabs.harvard.edu/abs/2024SPIE13092E..0QC/abstract>`_ are: 
 
 - In the Abstract, Satellite trail frequency, and Discussion sections, the average number of satellite trails for ARRAKIHS would be :math:`3.22_{-0.27}^{+0.27}` per typical exposure instead of :math:`69_{-21}^{+21}` with 560,000 satellites in orbit.
@@ -44,8 +42,6 @@ In the version of the article initially published, in the “Space telescope orb
 
 We thank the ARRAKIHS team for their careful review of the original manuscript, which improved the manuscript significantly. All the authors have been consulted and agree with the details of this correction.
 
-
-Published in *SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit* (Borlaff et al. 2026). Currently in revision for publication in The Astronomical Journal. 
 
 .. figure:: ../../MODELS/ntrails_vs_nsats_Dec2025_v2.png
    :width: 100%
@@ -79,4 +75,4 @@ Published as a `pre-print in Research Square <https://assets-eu.researchsquare.c
 
 Future releases (v4, 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We are currently working on an updated version of the forecast that will include several more observatories. Some of the unpublished models in the v3 release are already processed and in review by the relevant mission teams. We will include one new observatory in the v4 updated forecast. We expect to release this in late 2026. If you found a bug, want a new telescope, or would like to collaborate with us on this effort, `please send us an email <a.s.borlaff@nasa.gov>`_. 
+We are currently working on an updated version of the forecast that will include more observatories. Some of the unpublished models in the v3 release are already processed and in review by the relevant mission teams. We will include one new observatory in the v4 updated forecast. We expect to release this in late 2026. If you found a bug, want a new telescope, or would like to collaborate with us on this effort, `please send us an email <a.s.borlaff@nasa.gov>`_. 

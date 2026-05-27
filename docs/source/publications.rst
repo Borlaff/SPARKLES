@@ -42,7 +42,7 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
           url          = {https://doi.org/10.5281/zenodo.17655052},
          }
 
-**SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <../../PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
+**SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <../../../PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
 
 *Soon available as an ArXiV preprint (28 May 2026)*.
 

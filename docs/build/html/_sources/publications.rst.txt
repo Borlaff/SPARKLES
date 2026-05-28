@@ -48,13 +48,33 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
 
 3 - **SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <https://raw.githubusercontent.com/Borlaff/SPARKLES/main/PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
 
-*Soon available as an ArXiV preprint (28 May 2026). In processing by The Astronomical Journal.*.
+`Available as an ArXiV preprint (28 May 2026). <https://arxiv.org/abs/2605.27501>`_. *In processing by The Astronomical Journal.*.
+
+.. code-block:: bibtex
+
+  @ARTICLE{2026arXiv260527501B,
+        author = {{Borlaff}, Alejandro S. and {Marcum}, Pamela M. and {Howell}, Steve B. and {S{\'a}nchez-Alarc{\'o}n}, Pablo M. and {Dubois}, David and {McDowell}, Jonathan},
+          title = "{SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit}",
+        journal = {arXiv e-prints},
+      keywords = {Earth and Planetary Astrophysics, Astrophysics of Galaxies, Instrumentation and Methods for Astrophysics},
+          year = 2026,
+          month = may,
+            eid = {arXiv:2605.27501},
+          pages = {arXiv:2605.27501},
+  archivePrefix = {arXiv},
+        eprint = {2605.27501},
+  primaryClass = {astro-ph.EP},
+        adsurl = {https://ui.adsabs.harvard.edu/abs/2026arXiv260527501B},
+        adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+  }
 
 
 4 - **Zenodo: SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit**. Borlaff et al. (2026) - Public Database.
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.17957748.svg
   :target: https://doi.org/10.5281/zenodo.17957748
+
+
 
 
 Related Articles

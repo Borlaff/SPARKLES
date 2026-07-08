@@ -46,27 +46,25 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
           url          = {https://doi.org/10.5281/zenodo.17655052},
          }
 
-3 - **SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *Accepted for publication by The Astronomical Journal*. `Link to the accepted version (27 May 2026) <https://raw.githubusercontent.com/Borlaff/SPARKLES/main/PUBLICATIONS/SPHEREx_borlaff_AJ_2026.pdf>`_.
-
-`Available as an ArXiV preprint (28 May 2026) <https://arxiv.org/abs/2605.27501>`_. *In processing by The Astronomical Journal.*
+3 - **SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit** - *Borlaff, Marcum, Howell, Sánchez-Alarcón, Dubois, McDowell* (2026): *The Astronomical Journal, Volume 172, Number 1*. **DOI**: `10.3847/1538-3881/ae71ce <https://doi.org/10.3847/1538-3881/ae71ce>`_.
 
 .. code-block:: bibtex
 
-  @ARTICLE{2026arXiv260527501B,
-        author = {{Borlaff}, Alejandro S. and {Marcum}, Pamela M. and {Howell}, Steve B. and {S{\'a}nchez-Alarc{\'o}n}, Pablo M. and {Dubois}, David and {McDowell}, Jonathan},
-          title = "{SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit}",
-        journal = {arXiv e-prints},
-      keywords = {Earth and Planetary Astrophysics, Astrophysics of Galaxies, Instrumentation and Methods for Astrophysics},
-          year = 2026,
-          month = may,
-            eid = {arXiv:2605.27501},
-          pages = {arXiv:2605.27501},
-  archivePrefix = {arXiv},
-        eprint = {2605.27501},
-  primaryClass = {astro-ph.EP},
-        adsurl = {https://ui.adsabs.harvard.edu/abs/2026arXiv260527501B},
-        adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-  }
+@ARTICLE{2026AJ....172...41B,
+       author = {{Borlaff}, Alejandro S. and {Marcum}, Pamela M. and {Howell}, Steve B. and {S{\'a}nchez-Alarc{\'o}n}, Pablo M. and {Dubois}, David and {McDowell}, Jonathan},
+        title = "{SPHEREx Confirms Predictions for Artificial Satellite Trail Pollution in Low Earth Orbit}",
+      journal = {\aj},
+     keywords = {Space telescopes, Active solar chromosphere, Light pollution, Space observatories, Interdisciplinary astronomy, 1547, 1980, 2318, 1543, 804},
+         year = 2026,
+        month = jul,
+       volume = {172},
+       number = {1},
+          eid = {41},
+        pages = {41},
+          doi = {10.3847/1538-3881/ae71ce},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2026AJ....172...41B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
 
 
 4 - **Zenodo: SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit**. Borlaff et al. (2026) - Public Database.
@@ -83,3 +81,5 @@ Related Articles
 1 - `Satellite swarms set to photobomb more than 95% of some telescopes’ images <https://www.nature.com/articles/d41586-025-03953-1>`_ - Jenna Ahart (2025, Nature News) 
 
 2 - `Even in space, telescopes can’t escape photobombers <https://www.nature.com/articles/d41586-025-03725-x>`_ - Meredith Rawls (2025, Nature News & Views)
+
+3 - `Large or bright satellite constellations: Effects on observations, including on the background sky brightness <https://arxiv.org/pdf/2604.09427>`_ - Olivier R. Hainaut, et al. (2026, International Astronomical Union (IAU) Centre for the Protection of the Dark and Quiet Sky)

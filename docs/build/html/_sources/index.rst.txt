@@ -30,7 +30,7 @@ Overcrowding of Low Earth Orbit (LEO) by artificial satellite constellations is 
 The **SPARKLES** project started at NASA Ames Research Center aiming to answer the following question: *How frequent are satellite trails will be in the future for space telescopes?*. In `Borlaff, Marcum, and Howell (2025)
 <https://www.nature.com/articles/s41586-025-09759-5>`_ we discovered that if the current plans for satellite constellations are implemented, almost every single image from current and future space telescopes (>92%) will show artificial light contamination from satellites, and the levels and extent of the pollution could greatly increase in the next decades. Artificial satellite trails would have a significant impact on the potential scientific return of some of these missions, as well as on the public's access to the wonders of the Universe. 
 
-In its current stage (May 2026), the *SPARKLES* project aims to provide a long-term repository of accurate forecasts of satellite trail frequencies on various space-based observatories, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management.
+In its current stage (July 2026), the *SPARKLES* project aims to provide a long-term repository of accurate forecasts of satellite trail frequencies on various space-based observatories, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management.
 
 .. note::
 
@@ -39,6 +39,9 @@ In its current stage (May 2026), the *SPARKLES* project aims to provide a long-t
    But satellite trails are increasingly more frequent in the science products from telescopes both on the ground and in space. As conditions change, we keep pushing everyday to make our models better. We will be including software, databases, and tutorials in the very near future. If you are part of a mission and would like to estimate the artificial satellite trail contamination rate, contact us! **SPARKLES** is a NASA Ames Research Center Project that needs your help to improve! If you find a useful capability that could be added, a problem to be resolved, or any other idea, `email us <a.s.borlaff@nasa.gov>`_.
 
 The forecasts are updated based on the latest satellite proposals to the ITU and FCC, as they become available and are implemented in `Jonathan McDowell's Space Report <https://planet4589.org/>`_. The plot below illustrates the latest predictions of the average number of satellite trails per exposure of the selected space telescopes.
+
+
+
 
 Latest Satellite Trail Forecast - April 16th, 2026
 ===================================================

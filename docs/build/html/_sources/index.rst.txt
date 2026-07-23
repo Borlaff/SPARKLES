@@ -31,11 +31,10 @@ The **SPARKLES** project started at NASA Ames Research Center aiming to answer t
 <https://www.nature.com/articles/s41586-025-09759-5>`_ we discovered that if the current plans for satellite constellations are implemented, almost every single image from current and future space telescopes (>92%) will show artificial light contamination from satellites, and the levels and extent of the pollution could greatly increase in the next decades. Artificial satellite trails would have a significant impact on the potential scientific return of some of these missions, as well as on the public's access to the wonders of the Universe. 
 
 .. image:: ../../images/satellites_May2026_high.gif
-  :width: 802
-  :height: 512
-  :alt: Updated configuration of the satellite constellations in Earth Orbit as of July 2026.
+   :width: 100%
+   :alt: Updated configuration of the satellite constellations in Earth Orbit as of July 2026.
 
-  Updated configuration of the satellite constellations in Earth Orbit as of July 2026, including the latest FCC/ITU announcements (March 2026) from CTC1 and CTC2 (96,714 satellites each), and the SpaceX Orbital Data Centers (SXODC, 1,000,000 satellites). The total number of satellites considered (included existing debris, dead, and active satellites, and proposed constellations) adds up to 1,843,084. (`*Planet4589*: Satellite Constellation list <https://planet4589.org/space/con/conlist.html>`_).
+**Movie 1**: *Updated configuration of the satellite constellations in Earth Orbit as of July 2026, including the latest FCC/ITU announcements (March 2026) from CTC1 and CTC2 (96,714 satellites each), and the SpaceX Orbital Data Centers (SXODC, 1,000,000 satellites). The total number of satellites considered (included existing debris, dead, and active satellites, and proposed constellations) adds up to 1,843,084.* (`Planet4589: Satellite Constellation list <https://planet4589.org/space/con/conlist.html>`_).
 
 
 In its current stage (July 2026), the *SPARKLES* project aims to provide a long-term repository of accurate forecasts of satellite trail frequencies on various space-based observatories, enabling astronomers, industrial partners, and government agencies to plan more effectively and advocate for responsible satellite constellation management.

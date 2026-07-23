@@ -50,21 +50,21 @@ If you make use of the SPARKLES forecasts, models, or data in your research, ple
 
 .. code-block:: bibtex
 
-@ARTICLE{2026AJ....172...41B,
-       author = {{Borlaff}, Alejandro S. and {Marcum}, Pamela M. and {Howell}, Steve B. and {S{\'a}nchez-Alarc{\'o}n}, Pablo M. and {Dubois}, David and {McDowell}, Jonathan},
-        title = "{SPHEREx Confirms Predictions for Artificial Satellite Trail Pollution in Low Earth Orbit}",
-      journal = {\aj},
-     keywords = {Space telescopes, Active solar chromosphere, Light pollution, Space observatories, Interdisciplinary astronomy, 1547, 1980, 2318, 1543, 804},
-         year = 2026,
-        month = jul,
-       volume = {172},
-       number = {1},
-          eid = {41},
-        pages = {41},
-          doi = {10.3847/1538-3881/ae71ce},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2026AJ....172...41B},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
+    @ARTICLE{2026AJ....172...41B,
+          author = {{Borlaff}, Alejandro S. and {Marcum}, Pamela M. and {Howell}, Steve B. and {S{\'a}nchez-Alarc{\'o}n}, Pablo M. and {Dubois}, David and {McDowell}, Jonathan},
+            title = "{SPHEREx Confirms Predictions for Artificial Satellite Trail Pollution in Low Earth Orbit}",
+          journal = {\aj},
+        keywords = {Space telescopes, Active solar chromosphere, Light pollution, Space observatories, Interdisciplinary astronomy, 1547, 1980, 2318, 1543, 804},
+            year = 2026,
+            month = jul,
+          volume = {172},
+          number = {1},
+              eid = {41},
+            pages = {41},
+              doi = {10.3847/1538-3881/ae71ce},
+          adsurl = {https://ui.adsabs.harvard.edu/abs/2026AJ....172...41B},
+          adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    }
 
 
 4 - **Zenodo: SPHEREx confirms predictions for artificial satellite trail pollution in Low Earth Orbit**. Borlaff et al. (2026) - Public Database.
